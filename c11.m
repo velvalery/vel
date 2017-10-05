@@ -7,4 +7,6 @@ figure(11);
 mag = abs(h);
 phase = angle(h)*180/pi;
 subplot(211), plot(w/(2*pi)*fs,mag), grid on;
-subplot(212), plot(w/(2*pi) *fs,unwrap(phase)), grid on;
+xlabel('fs'), title('АЧХ');
+subplot(2,1,2), plot(w/(2*pi)*fs, unwrap(phase)), grid on;
+xlabel('fs'), title('ФЧХ');
