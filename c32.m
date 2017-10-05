@@ -1,0 +1,12 @@
+fs = 60;
+ecg = load('ecg2x60.dat');  
+ecgD = detrend(ecg);
+ecgFilt = filter(br, ar, ecgD);
+t = (0:length(ecgD)-1)/fs;      
+figure(32);
+subplot(211), plot(t, ecgD), xlim([2 7.3]);
+title('Нефільтрований сигнал');
+xlabel('Час, t'), ylabel('Aмплітуда');
+subplot(212), plot(t, ecgFilt), xlim([2 7.3]);
+title('Фільтрований сигнал');
+xlabel('Час, t'), ylabel('Aмплітуда');
